@@ -1,0 +1,71 @@
+
+:root{--color-icon:#0EE;--color-icon-focus-within:#E00;--radius-lg:40px;--anim-fast:.3s;}
+*, *::before, *::after{box-sizing:border-box}
+body{padding:0;margin:0;font-family: 'Albert Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif}
+ul{padding:0;margin:0}
+li{list-style:none}
+.header{display:flex;align-items:center;justify-content:space-between;min-height:100dvh;position:relative}
+.header__bg{position:absolute;inset:0;z-index:-1;filter:brightness(.6)}
+.header__bg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+/* (contain:layout paint) Añade esto para suavidad visual: */
+/* (contain:layout paint) Útil, pero si algo “no responde”, este suele ser el culpable. */
+/* (contain:layout paint) No lo pongas por defecto en navegación interactiva. */
+.header__nav{width:20em;contain:layout paint;transform:scaleX(.9);transform-origin:left;background-color:transparent;padding:15px;display:flex;flex-direction:column;border-top-right-radius:var(--radius-lg);border-bottom-right-radius:var(--radius-lg);transition:transform var(--anim-fast) ease;overflow:hidden;min-height:50dvh}
+.header__nav:focus-within .header__link--animated, .header__nav:focus-within .header__menu--animated{animation-play-state:paused}
+.header__nav:hover .header__link svg{fill:#fff}
+.header__nav:hover .header__text, .header__link:focus-within .header__text{opacity:1;visibility:visible;transition-delay:0s}
+.header__list{display:flex;flex-direction:column;align-items:flex-start;justify-content:space-evenly;border-top-right-radius:var(--radius-lg);border-bottom-right-radius:var(--radius-lg)}
+.header__link{display:flex;padding:10px;align-items:center;gap:1em;text-decoration:none}
+.header__link--animated, .header__menu--animated{animation:floater 1.5s ease-in-out infinite}
+.header__link--animated:hover, .header__menu--animated:hover{animation-play-state:paused}
+.header__link:focus-visible{outline:1px solid #fff;outline-color:var(--color-icon-focus-within);outline-offset:1px}
+.header__link:focus:not(:focus-visible){outline:none}
+.header__link:focus-within svg path {fill:var(--color-icon-focus-within)}
+.header__link:focus-within .header__text{color:var(--color-icon-focus-within)}
+.header__link:hover svg path{fill:var(--color-icon)}
+.header__link:hover .header__text{text-decoration:underline;color:var(--color-icon)}
+.header__link svg{width:25px;height:25px;fill:var(--color-icon);transition: fill var(--anim-fast) ease}
+.header__text{white-space:nowrap;color:#fff;font-weight:bold;font-size:1.2em;opacity:0;visibility:hidden;transition:opacity var(--anim-fast) ease, visibility 0s linear var(--anim-fast);pointer-events:none}
+.header__menu{display:flex;flex-direction:column;justify-content:center;width:3rem;height:3rem;background-color:transparent;border:none;gap:.65rem;margin:3em 2em 0 0;position:relative;z-index:10}
+/* Mucho will-change: úsalo solo cuando sea necesario. */
+.header__menu--animated, .header__link--animated{will-change:transform}
+.header__menu:active{transform:scale(.95)}
+.header__menu:focus-visible{outline:1px solid #fff;outline-color:var(--color-icon-focus-within);outline-offset:1px}
+.header__menu--animated{animation:floater 1.5s ease-in-out infinite}
+.header__link--animated:focus-visible, .header__menu--animated:focus-visible{animation-play-state:paused}
+.header__menu > .header__line{width:100%;height:2px;background-color:var(--color-icon);border-radius:5px;transition:transform var(--anim-fast) ease, opacity var(--anim-fast) ease, background-color var(--anim-fast) ease;transform-origin:left}
+.header__menu:hover .header__line{background-color:#fff}
+.header__menu:hover > .header__line:first-child{transform:rotate(45deg)}
+.header__menu:hover > .header__line:nth-child(2){opacity:0}
+.header__menu:hover > .header__line:last-child{transform: rotate(-45deg)}
+.header__menu-wrap{position:relative;align-self:flex-start}
+.header__dropdown{position:absolute;top:2em;right:0;width:20em;opacity:0;visibility:hidden;transition:opacity .3s ease;overflow:auto;height:42em;scrollbar-color:#fff #000;scrollbar-width:thin}
+.header__dropdown-list{display:flex;flex-direction:column;gap:10px;margin:0;padding:20px}
+.header__dropdown-item{list-style:disc;color:var(--color-icon-focus-within);animation:floater 1.5s ease-in-out infinite}
+.header__dropdown-item:hover{animation-play-state:paused}
+.header__dropdown-link{font-size:1.2em;font-weight:bold;text-decoration:none;color:#fff}
+.header__dropdown-link:hover{text-decoration:underline;color:var(--color-icon)}
+.header__dropdown-link:focus-visible{outline:1px solid #fff;outline-color:var(--color-icon-focus-within);outline-offset:1px}
+.header__dropdown-link:focus-within{color:var(--color-icon-focus-within)}
+.header__menu-wrap:hover .header__dropdown{opacity:1;visibility:visible}
+/*MAIN SECTION*/
+
+/* Movimiento: flotación sutil para atraer la atención. */
+@keyframes floater{
+    0%{transform:translateY(0%)}
+    50%{transform:translateY(-10%)scale(1.02);}100%{transform:translateY(0%)}
+}
+/* @media (prefers-reduced-motion: reduce) */
+@media (prefers-reduced-motion: reduce){
+    .header__link--animated, .header__menu--animated{animation:none }
+}
+/* Media Queries */
+/* Solo aplica hover en dispositivos que lo soportan */
+/* No usa ancho de pantalla porque no detecta tamaño, detecta capacidad del dispositivo. */
+@media (hover: hover) and (pointer: fine){
+    .header__nav:hover{transform:scaleX(1)}
+}
+/* Y para mobile */
+@media (hover: none){
+    .header__text{opacity:1;visibility:visible}
+}
