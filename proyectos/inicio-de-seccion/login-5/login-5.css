@@ -1,0 +1,455 @@
+body {
+    margin: 0;
+    background-color: #000;
+    height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.main-bar {
+    position: relative;
+    width: 256px;
+    height: 256px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-bar__barra-de-carga {
+    position: absolute;
+    left: 0;
+    width: 32px;
+    height: 6px;
+    background-color: #ffe00033;
+    border-radius: 8px;
+    transform-origin: 128px;
+    transform: scale(2.2);
+    animation: carga 5s linear infinite;
+}
+
+@keyframes carga {
+    0% {
+        background-color: #ffe000;
+    }
+
+    20% {
+        background-color: #ffe00055;
+    }
+}
+
+.main-bar__barra-de-carga:first-child {
+    animation-delay: .1s;
+}
+
+.main-bar__barra-de-carga:nth-child(2) {
+    rotate: 7.2deg;
+    animation-delay: .2s;
+}
+
+.main-bar__barra-de-carga:nth-child(3) {
+    rotate: 14.4deg;
+    animation-delay: .3s;
+}
+
+.main-bar__barra-de-carga:nth-child(4) {
+    rotate: 21.6deg;
+    animation-delay: .4s;
+}
+
+.main-bar__barra-de-carga:nth-child(5) {
+    rotate: 28.8deg;
+    animation-delay: .5s;
+}
+
+.main-bar__barra-de-carga:nth-child(6) {
+    rotate: 36deg;
+    animation-delay: .6s;
+}
+
+.main-bar__barra-de-carga:nth-child(7) {
+    rotate: 43.2deg;
+    animation-delay: .7s;
+}
+
+.main-bar__barra-de-carga:nth-child(8) {
+    rotate: 50.4deg;
+    animation-delay: .8s;
+}
+
+.main-bar__barra-de-carga:nth-child(9) {
+    rotate: 57.6deg;
+    animation-delay: .9s;
+}
+
+.main-bar__barra-de-carga:nth-child(10) {
+    rotate: 64.8deg;
+    animation-delay: 1s;
+}
+
+.main-bar__barra-de-carga:nth-child(11) {
+    rotate: 72deg;
+    animation-delay: 1.1s;
+}
+
+.main-bar__barra-de-carga:nth-child(12) {
+    rotate: 79.2deg;
+    animation-delay: 1.2s;
+}
+
+.main-bar__barra-de-carga:nth-child(13) {
+    rotate: 86.4deg;
+    animation-delay: 1.3s;
+}
+
+.main-bar__barra-de-carga:nth-child(14) {
+    rotate: 93.6deg;
+    animation-delay: 1.4s;
+}
+
+.main-bar__barra-de-carga:nth-child(15) {
+    rotate: 100.8deg;
+    animation-delay: 1.5s;
+}
+
+.main-bar__barra-de-carga:nth-child(16) {
+    rotate: 108deg;
+    animation-delay: 1.6s;
+}
+
+.main-bar__barra-de-carga:nth-child(17) {
+    rotate: 115.2deg;
+    animation-delay: 1.7s;
+}
+
+.main-bar__barra-de-carga:nth-child(18) {
+    rotate: 122.4deg;
+    animation-delay: 1.8s;
+}
+
+.main-bar__barra-de-carga:nth-child(19) {
+    rotate: 129.6deg;
+    animation-delay: 1.9s;
+}
+
+.main-bar__barra-de-carga:nth-child(20) {
+    rotate: 136.8deg;
+    animation-delay: 2s;
+}
+
+.main-bar__barra-de-carga:nth-child(21) {
+    rotate: 144deg;
+    animation-delay: 2.1s;
+}
+
+.main-bar__barra-de-carga:nth-child(22) {
+    rotate: 151.2deg;
+    animation-delay: 2.2s;
+}
+
+.main-bar__barra-de-carga:nth-child(23) {
+    rotate: 158.4deg;
+    animation-delay: 2.3s;
+}
+
+.main-bar__barra-de-carga:nth-child(24) {
+    rotate: 165.6deg;
+    animation-delay: 2.4s;
+}
+
+.main-bar__barra-de-carga:nth-child(25) {
+    rotate: 172.8deg;
+    animation-delay: 2.5s;
+}
+
+.main-bar__barra-de-carga:nth-child(26) {
+    rotate: 180deg;
+    animation-delay: 2.6s;
+}
+
+.main-bar__barra-de-carga:nth-child(27) {
+    rotate: 187.2deg;
+    animation-delay: 2.7s;
+}
+
+.main-bar__barra-de-carga:nth-child(28) {
+    rotate: 194.4deg;
+    animation-delay: 2.8s;
+}
+
+.main-bar__barra-de-carga:nth-child(29) {
+    rotate: 201.6deg;
+    animation-delay: 2.9s;
+}
+
+.main-bar__barra-de-carga:nth-child(30) {
+    rotate: 208.8deg;
+    animation-delay: 3s;
+}
+
+.main-bar__barra-de-carga:nth-child(31) {
+    rotate: 216deg;
+    animation-delay: 3.1s;
+}
+
+.main-bar__barra-de-carga:nth-child(32) {
+    rotate: 223.2deg;
+    animation-delay: 3.2s;
+}
+
+.main-bar__barra-de-carga:nth-child(33) {
+    rotate: 230.4deg;
+    animation-delay: 3.3s;
+}
+
+.main-bar__barra-de-carga:nth-child(34) {
+    rotate: 237.6deg;
+    animation-delay: 3.4s;
+}
+
+.main-bar__barra-de-carga:nth-child(35) {
+    rotate: 244.8deg;
+    animation-delay: 3.5s;
+}
+
+.main-bar__barra-de-carga:nth-child(36) {
+    rotate: 252deg;
+    animation-delay: 3.6s;
+}
+
+.main-bar__barra-de-carga:nth-child(37) {
+    rotate: 259.2deg;
+    animation-delay: 3.7s;
+}
+
+.main-bar__barra-de-carga:nth-child(38) {
+    rotate: 266.4deg;
+    animation-delay: 3.8s;
+}
+
+.main-bar__barra-de-carga:nth-child(39) {
+    rotate: 273.6deg;
+    animation-delay: 3.9s;
+}
+
+.main-bar__barra-de-carga:nth-child(40) {
+    rotate: 280.8deg;
+    animation-delay: 4s;
+}
+
+.main-bar__barra-de-carga:nth-child(41) {
+    rotate: 288deg;
+    animation-delay: 4.1s;
+}
+
+.main-bar__barra-de-carga:nth-child(42) {
+    rotate: 295.2deg;
+    animation-delay: 4.2s;
+}
+
+.main-bar__barra-de-carga:nth-child(43) {
+    rotate: 302.4deg;
+    animation-delay: 4.3s;
+}
+
+.main-bar__barra-de-carga:nth-child(44) {
+    rotate: 309.6deg;
+    animation-delay: 4.4s;
+}
+
+.main-bar__barra-de-carga:nth-child(45) {
+    rotate: 316.8deg;
+    animation-delay: 4.5s;
+}
+
+.main-bar__barra-de-carga:nth-child(46) {
+    rotate: 324deg;
+    animation-delay: 4.6s;
+}
+
+.main-bar__barra-de-carga:nth-child(47) {
+    rotate: 331.2deg;
+    animation-delay: 4.7s;
+}
+
+.main-bar__barra-de-carga:nth-child(48) {
+    rotate: 338.4deg;
+    animation-delay: 4.8s;
+}
+
+.main-bar__barra-de-carga:nth-child(49) {
+    rotate: 345.6deg;
+    animation-delay: 4.9s;
+}
+
+.main-bar__barra-de-carga:nth-child(50) {
+    rotate: 352.8deg;
+    animation-delay: 5s;
+}
+
+.main-bar__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: -.5rem;
+}
+
+.main-bar__form div:first-child {
+    font-size: 1.3rem;
+    color: #ffe000;
+    text-align: center;
+}
+
+.main-bar__form div:first-child h2 {
+    margin: 0;
+    padding: 8px 0;
+}
+
+.main-bar__form div {
+    display: flex;
+    justify-content: center;
+}
+
+.main-bar__form div input {
+    width: clamp(250px, 20dvw, 500px);
+    height: 40px;
+    border-radius: 40px;
+    border: 1px solid #ffe00055;
+    background-color: transparent;
+    outline: none;
+    transition: all .5s;
+}
+
+.main-bar__form div input:focus,
+.main-bar__form div input:valid {
+    border-color: #ffe000;
+    color: #fff;
+    font-size: 1em;
+}
+
+.main-bar__form div label {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-55%);
+    font-size: 1rem;
+    pointer-events: none;
+    transition: .5s ease;
+}
+
+.main-bar__form div input:focus ~ label,
+.main-bar__form div input:valid ~ label {
+    top: 1px;
+    font-size: .8em;
+    background-color: #000;
+    padding: 0 6px;
+    color: #ffe000;
+}
+
+.main-bar__form div:nth-child(2),
+.main-bar__form div:nth-child(3) {
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    position: relative;
+}
+
+.main-bar__form div:nth-child(2) input:hover,
+.main-bar__form div:nth-child(3) input:hover {
+    background-color: #222;
+}
+
+.main-bar__form div:nth-child(4) a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1em;
+    transition: all .5s;
+}
+
+.main-bar__form div:nth-child(4) a:hover {
+    opacity: .3;
+    text-decoration: underline;
+}
+
+.main-bar__form div:nth-child(5) button {
+    width: clamp(250px, 20dvw, 500px);
+    height: 40px;
+    border-radius: 40px;
+    border: 1px solid #fff;
+    background-color: transparent;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    color: #fff;
+    transition: all .5s;
+}
+
+.main-bar__form div:nth-child(5) button:hover {
+    background-color: #eee000;
+    color: #000;
+    border: none;
+    box-shadow: -10px 10px 20px 0 #eee00022;
+}
+
+.main-bar__form div:nth-child(5) a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.main-bar__form div:nth-child(6) a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1em;
+    color: #ffe000;
+    transition: all .5s;
+}
+
+.main-bar__form div:nth-child(6) a:hover {
+    opacity: .3;
+    text-decoration: underline;
+}
+
+.main-bar__form div:nth-child(6) button {
+    background-color: #ffe000;
+}
+
+.main-bar__form div:nth-child(7) a {
+    color: #ffe000;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 37.5rem) {
+
+    .main-bar__barra-de-carga {
+        top: -4.2rem;
+        transform: scale(.9);
+    }
+
+    .main-bar__form {
+        gap: 30px;
+        margin-top: 0;
+        width: 100dvw;
+    }
+
+    .main-bar__form div:first-child h2 {
+        margin: 0;
+        padding: 5.9rem 0;
+        margin-top: -3rem;
+        font-size: 2.5rem;
+    }
+
+    .main-bar__form div input {
+        width: clamp(330px, 20dvw, 400px);
+        height: 50px;
+    }
+
+    .main-bar__form div:nth-child(5) button {
+        width: clamp(330px, 20dvw, 400px);
+        height: 50px;
+    }
+
+
+}
