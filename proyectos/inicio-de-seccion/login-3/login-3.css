@@ -1,0 +1,250 @@
+body {
+    margin: 0;
+    padding: 0 20px;
+    height: 100dvh;
+    width: 100dvw;
+    display: flex;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: relative;
+    overflow-x: hidden;
+    background-position: center;
+    background-size: cover;
+    backdrop-filter: blur(2px);
+    animation: deslisar 10s ease-in-out infinite both;
+    animation-delay: 4s;
+}
+
+.modal {
+    position: absolute;
+    left: 0;
+    width: 100dvw;
+    height: 100dvh;
+    background-image: linear-gradient(#2228, #0008);
+}
+
+form {
+    backdrop-filter: blur(5px);
+    margin: auto;
+    width: clamp(300px, 50%, 400px);
+    display: flex;
+    flex-direction: column;
+    padding: 40px 50px 60px 50px;
+    border-radius: 10px;
+    color: #fff;
+    text-align: center;
+    gap: 40px;
+    border: 2px solid #fff2;
+    animation: aparecer 1s both, linea-color 1s 3s both;
+    overflow: hidden;
+    position: relative;
+    z-index: 50;
+}
+
+.form__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: aparecer 3s both;
+    box-sizing: border-box;
+    width: 100%;
+    margin: auto;
+}
+
+.form__item > h2 {
+    color: #fff;
+    font-size: 3rem;
+    animation: aparecer 3s both;
+    margin: auto;
+    padding-bottom: 1.3rem;
+}
+
+.form__item:nth-child(2),
+.form__item:nth-child(3) {
+    position: relative;
+    margin: auto;
+    margin-top: -1rem;
+}
+
+.form__item:nth-child(2) > label,
+.form__item:nth-child(3) > label {
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+    animation: aparece 4s 2s both;
+    opacity: .1;
+}
+
+.form__item:nth-child(2) > input,
+.form__item:nth-child(3) > input {
+    outline: none;
+    color: #fff;
+    font-size: 1.2rem;
+    transition: all .5s;
+    padding: 17px 20px;
+    border-radius: 50px;
+    border: 2px solid #fff2;
+    background-color: transparent;
+    animation: aparecer 3s both;
+    width: 100dvw;
+    margin: auto;
+    position: relative;
+}
+
+:is(
+    .form__item:nth-child(2) > input,
+    .form__item:nth-child(3) > input
+    ):focus {
+    border: 2px solid #fff;
+}
+
+.form__item:nth-child(2) > input:focus ~ label,
+.form__item:nth-child(3) > input:focus ~ label {
+    color: #0001;
+    transition: all .5s;
+} 
+
+.form__item > input:hover {
+    background-color: #fff2;
+    border: 2px solid #fff;
+}
+
+.form__item > input::placeholder {
+    color: #fff8;
+    font-size: 1.2rem;
+}
+
+.form__item:nth-child(4) > div {
+    display: flex;
+    gap: 5px;
+    font-size: 1.2rem;
+}
+
+.form__item:nth-child(4) > div > a {
+    color: #fff;
+    font-weight: bold;
+    transition: all .5s;
+    text-decoration: none;
+}
+
+.form__item:nth-child(4) > div > a:hover {
+    opacity: .3;
+    text-decoration: underline;
+}
+
+.form__item:nth-child(5) > button {
+    width: 100dvw;
+    padding: 15px;
+    border-radius: 50px;
+    border: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all .5s;
+    animation: aparecer 3s both;
+    margin: auto;
+}
+
+.form__item:nth-child(5) > button:hover {
+    background-color: #fff2;
+    color: #fff;
+    font-weight: bold;
+}
+
+.form__item:nth-child(6) p {
+    font-size: 1.2rem;
+    animation: aparecer 3s 1s both;
+    margin: auto;
+}
+
+.form__item:nth-child(6) > p > a {
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all .5s;
+}
+
+.form__item:nth-child(6) > p > a:hover {
+    opacity: .3;
+    text-decoration: underline;
+    top: 10px;
+}
+
+/* ANIMACIONES */
+
+@keyframes aparecer {
+    from {
+        opacity: .5;
+        transform: scale(0);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes aparece {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: .6;
+    }
+}
+
+@keyframes deslisar {
+
+    0% {background-image: url("Imagenes/img-1.jpg");}
+
+    25% {background-image: url("Imagenes/img-2.jpg");}
+
+    50% {background-image: url("Imagenes/img-11.jpg");}
+
+    75% {background-image: url("Imagenes/img-12.jpg");}
+
+    100% {background-image: url("Imagenes/img-6.jpg");}
+
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 37.5rem) {
+
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100dvh;
+    }
+
+    .modal {
+        backdrop-filter: blur(5px);
+        width: 100dvw;
+        height: 100dvh;
+        position: absolute;
+        top: 0;
+        display: flex;
+        z-index: -1;
+        background-color: #0005;
+    }
+
+    form {
+        padding: 40px 20px 60px 20px;
+        border-radius: 0;
+        border: none;
+        width: 100dvw;
+        gap: 40px;
+        backdrop-filter: none;
+        
+    }
+
+    .form__item > h2 {
+        color: #fff;
+        font-size: 3rem;
+        animation: aparecer 3s both;
+        margin: auto;
+        padding-bottom: 1.3rem;
+    }
+}
